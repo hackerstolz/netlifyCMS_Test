@@ -1,14 +1,12 @@
 # Default ignored files
-/workspace.xml
+workspace.xml
 
 *.log
-../.cache
+.cache
 .DS_Store
-../src/.temp
-../node_modules
+src/.temp
+node_modules
 dist
 .env
 .env.*
 .idea
-
-/node_modules/
