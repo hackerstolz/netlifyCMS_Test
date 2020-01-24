@@ -3,7 +3,9 @@ backend:
   branch: master # Branch to update (optional; defaults to master)
   repo: hackerstolz/netlifyCMS_Test
 
-media_folder: "images/uploads" # Media files will be stored in the repo under images/uploads
+# media_folder: "" # Media files will be stored in the repo under images/uploads
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: "test" # Used in routes, e.g., /admin/collections/blog
@@ -13,5 +15,16 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Test", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: Featured Image
+        name: thumbnail
+        widget: "image"
+        media_library:
+          config:
+            max_file_size: 512000 # 500kb
+      - label: Description
+        name: description
+        widget: list
+        fields:
+          - {label: Language, name: language, widget: select, options: ["en", "es"]}
+          - {label: Content, name: content, widget: markdown}
