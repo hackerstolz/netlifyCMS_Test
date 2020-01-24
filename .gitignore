@@ -9,5 +9,6 @@
 dist
 .env
 .env.*
+.idea
 
 /node_modules/
