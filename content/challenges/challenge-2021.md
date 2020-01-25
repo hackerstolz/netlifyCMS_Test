@@ -1,6 +1,6 @@
 ---
 title: Challenge 2021
-hackathon: Climathon 2021
+hackathon: climathon2021
 descriptions:
   - description: EN
     language: en
