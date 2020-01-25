@@ -29,10 +29,11 @@ module.exports = {
           typeName: 'Hackathon',
           refs: {
                     // Creates a GraphQL collection from challenges in front-matter and adds a reference.
+                    /*
                     challenges: {
                       typeName: 'Challenge'//,
                       //create: true
-                    }
+                    } */
                   },
           remark: {
             plugins: [
@@ -47,6 +48,10 @@ module.exports = {
             path: 'content/challenges/**/*.md',
             typeName: 'Challenge',
             refs: {
+                    hackathon: {
+                                  typeName: 'Hackathon'//,
+                                  //create: true
+                                }
                     },
             remark: {
               plugins: [
