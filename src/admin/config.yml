@@ -1,0 +1,56 @@
+backend:
+  name: github
+  branch: master # Branch to update (optional; defaults to master)
+  repo: hackerstolz/netlifyCMS_Test
+
+# media_folder: "" # Media files will be stored in the repo under images/uploads
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "hackathon" # Used in routes, e.g., /admin/collections/blog
+    label: "Hackathon" # Used in the UI
+    folder: "content/hackathons" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}"
+    fields:
+      - {label: "ID", name: "id", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: Logo
+        name: logo
+        widget: "image"
+        media_library:
+          config:
+            max_file_size: 256000 # 250kb
+      - label: Descriptions
+        name: descriptions
+        widget: list
+        fields:
+          - {label: Language, name: language, widget: select, options: ["de", "en"]}
+          - {label: Description, name: description, widget: markdown}
+  - name: "challenge" # Used in routes, e.g., /admin/collections/blog
+    label: "Challenge" # Used in the UI
+    folder: "content/challenges" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - label: Hackathon
+        name: hackathon
+        widget: "relation"
+        collection: "hackathon"
+        searchFields: ["id", "title"]
+        valueField: "title"
+        displayFields: ["title"]
+      - label: Descriptions
+        name: descriptions
+        widget: list
+        fields:
+          - {label: Language, name: language, widget: select, options: ["de", "en"]}
+          - {label: Description, name: description, widget: markdown}
+      - label: Image
+        name: image
+        widget: "image"
+        media_library:
+          config:
+            max_file_size: 512000 # 500kb
