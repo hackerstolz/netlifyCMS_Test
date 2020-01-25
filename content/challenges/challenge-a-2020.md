@@ -1,11 +1,11 @@
 ---
 title: Challenge A 2020
-image: /images/uploads/stocard.png
+hackathon: climathon2020
 descriptions:
   - description: DE
     language: de
   - description: EN
     language: en
-hackathon: Climathon 2020
+image: /images/uploads/stocard.png
 ---
 
