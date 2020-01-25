@@ -1,5 +1,5 @@
 ---
-id: climathon2020
+id: a
 title: Climathon 2020
 logo: ''
 descriptions:
