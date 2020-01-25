@@ -1,8 +1,8 @@
-import plugin_gridsome_plugin_netlify_cms_6 from "C:\\Users\\sasch\\node_modules\\gridsome-plugin-netlify-cms\\gridsome.client.js"
+import plugin_gridsome_plugin_netlify_cms_7 from "C:\\Users\\sasch\\IdeaProjects\\netlifyCMS_Test\\node_modules\\gridsome-plugin-netlify-cms\\gridsome.client.js"
 
 export default [
   {
-    run: plugin_gridsome_plugin_netlify_cms_6,
-    options: {"publicPath":"/admin","htmlTitle":"Content Editor","configPath":"src/admin/config.yml","modulePath":"C:\\Users\\sasch\\node_modules\\gridsome-plugin-netlify-cms/lib/cms.js","htmlPath":"C:\\Users\\sasch\\node_modules\\gridsome-plugin-netlify-cms/templates/index.html","injectScript":true,"enableIdentityWidget":true,"debug":false}
+    run: plugin_gridsome_plugin_netlify_cms_7,
+    options: {"publicPath":"/admin","modulePath":"src/admin/index.js","configPath":"src/admin/config.yml","htmlPath":"src/admin/index.html","htmlTitle":"My Gridsome integrated CMS","injectScript":true,"enableIdentityWidget":true,"debug":false}
   }
 ]

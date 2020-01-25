@@ -16,10 +16,11 @@ collections:
     identifier_field: id
     summary: "{{title}} ({{id}})"
     fields:
-      - {label: "ID", name: "id", widget: "string", hint: "A unique string to ensure correct relations and queries"}
+      - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
       - {label: "Title", name: "title", widget: "string"}
-      - label: Logo
-        name: logo
+      - {label: "Active", name: "active", widget: "boolean", required: false}
+      - label: "Logo"
+        name: "logo"
         widget: "image"
         required: false
         media_library:
@@ -29,7 +30,7 @@ collections:
         name: descriptions
         widget: list
         fields:
-          - {label: Language, name: language, widget: select, options: ["DE", "EN"]}
+          - {label: Language, name: language, widget: select, options: ["DE", "EN"], default: "DE"}
           - {label: Description, name: description, widget: markdown}
   - name: "challenge"
     label: "Challenge"
@@ -39,7 +40,7 @@ collections:
     identifier_field: id
     summary: "{{title}} ({{id}})"
     fields:
-      - {label: "ID", name: "id", widget: "string", hint: "A unique string to ensure correct relations and queries", pattern: ['^\w{3,}$', "Only letters or numbers, at least 3!"]}
+      - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
       - {label: "Title", name: "title", widget: "string"}
       - label: Hackathon
         name: hackathon

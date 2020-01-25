@@ -67,7 +67,8 @@ module.exports = {
             modulePath: 'src/admin/index.js',
             configPath: 'src/admin/config.yml',
             htmlPath: 'src/admin/index.html',
-            htmlTitle: 'My Gridsome integrated CMS'
+            htmlTitle: 'My Gridsome integrated CMS',
+            //plugins: ['@ncwidgets/id']
           }
       }/*,
       {
