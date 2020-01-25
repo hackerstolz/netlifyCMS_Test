@@ -1,9 +1,9 @@
 ---
 title: Challenge B 2020
-image: /images/uploads/stocard.png
+hackathon: climathon2020
 descriptions:
   - description: DE
     language: de
-hackathon: Climathon 2020
+image: /images/uploads/stocard.png
 ---
 
