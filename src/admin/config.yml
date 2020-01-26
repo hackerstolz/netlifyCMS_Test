@@ -18,7 +18,7 @@ collections:
     fields:
       - {label: "ID", name: "id", widget: "uuid", hint: "A unique string to ensure correct relations and queries"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Active", name: "active", widget: "boolean", required: false}
+      - {label: "Active", name: "active", widget: "boolean", default: false}
       - label: "Logo"
         name: "logo"
         widget: "image"
