@@ -48,10 +48,86 @@ module.exports = {
             path: 'content/challenges/**/*.md',
             typeName: 'Challenge',
             refs: {
-                    hackathon: {
-                                  typeName: 'Hackathon'//,
-                                  //create: true
-                                }
+                    hackathon: { typeName: 'Hackathon' },
+					price: { typeName: 'Price' },
+					badge: { typeName: 'Badge' },
+					category: { typeName: 'Category' }
+                    },
+            remark: {
+              plugins: [
+                // ...local plugins
+              ]
+            }
+          }
+      },
+	  {
+          use: '@gridsome/source-filesystem',
+          options: {
+            path: 'content/badges/**/*.md',
+            typeName: 'Badge',
+            refs: {
+                    },
+            remark: {
+              plugins: [
+                // ...local plugins
+              ]
+            }
+          }
+      },
+	  {
+          use: '@gridsome/source-filesystem',
+          options: {
+            path: 'content/categories/**/*.md',
+            typeName: 'Category',
+            refs: {
+					price: 	{
+							 typeName: 'Price'//,
+							 //create: true
+							}
+                    },
+            remark: {
+              plugins: [
+                // ...local plugins
+              ]
+            }
+          }
+      },
+	  {
+          use: '@gridsome/source-filesystem',
+          options: {
+            path: 'content/prices/**/*.md',
+            typeName: 'Price',
+            refs: {
+                    },
+            remark: {
+              plugins: [
+                // ...local plugins
+              ]
+            }
+          }
+      },
+	  {
+          use: '@gridsome/source-filesystem',
+          options: {
+            path: 'content/parties/**/*.md',
+            typeName: 'Party',
+            refs: {
+					role: 	{ typeName: 'Role' },
+					hackathon: { typeName: 'Hackathon' }
+                    },
+            remark: {
+              plugins: [
+                // ...local plugins
+              ]
+            }
+          }
+      },
+	  {
+          use: '@gridsome/source-filesystem',
+          options: {
+            path: 'content/roles/**/*.md',
+            typeName: 'Role',
+            refs: {
                     },
             remark: {
               plugins: [
