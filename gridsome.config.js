@@ -137,6 +137,56 @@ module.exports = {
             }
           }
       },
+	  {
+        use: '@gridsome/source-filesystem',
+        options: {
+          path: 'content/test/hackathons/**/*.json',
+          typeName: 'HackathonJson',
+          refs: {
+                    // Creates a GraphQL collection from challenges in front-matter and adds a reference.
+                    /*
+                    challenges: {
+                      typeName: 'Challenge'//,
+                      //create: true
+                    } */
+                  },
+          remark: {
+            plugins: [
+              '@gridsome/transformer-json'
+            ]
+          }
+        }
+      },
+	  {
+          use: '@gridsome/source-filesystem',
+          options: {
+            path: 'content/test/challenges/**/*.json',
+            typeName: 'ChallengeJson',
+            refs: {
+                    hackathon: { typeName: 'HackathonJson' },
+					badges: { typeName: 'BadgeJson'}
+                    },
+            remark: {
+              plugins: [
+                '@gridsome/transformer-json'
+              ]
+            }
+          }
+      },
+	  {
+          use: '@gridsome/source-filesystem',
+          options: {
+            path: 'content/test/badges/**/*.json',
+            typeName: 'BadgeJson',
+            refs: {
+                    },
+            remark: {
+              plugins: [
+                '@gridsome/transformer-json'
+              ]
+            }
+          }
+      },
       {
           use: 'gridsome-plugin-netlify-cms',
           options: {
