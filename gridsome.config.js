@@ -7,9 +7,10 @@
 module.exports = {
     siteName: 'Gridsome',
 
-    templates: {
+    /*
+	templates: {
        Hackathon: '/:title'
-    },
+    },*/
 
     transformers: {
       remark: {
@@ -17,7 +18,7 @@ module.exports = {
         externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
         anchorClassName: 'icon icon-link',
         plugins: [
-          '@gridsome/remark-prismjs'
+         // '@gridsome/remark-prismjs'
         ]
       }
     },
@@ -50,7 +51,7 @@ module.exports = {
             refs: {
                     hackathon: { typeName: 'Hackathon' },
 					price: { typeName: 'Price' },
-					badge: { typeName: 'Badge' },
+					badges: { typeName: 'Badge'},
 					category: { typeName: 'Category' }
                     },
             remark: {

@@ -14,7 +14,8 @@
     "gridsome": "^0.7.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "gridsome-transformer-netlify": "^1.0.3",
-    "netlify-cms": "^2.10.12",
-    "netlify-cms-widget-uuid": "0.0.9"
+    "netlify-cms": "^2.10.13",
+    "netlify-cms-widget-uuid": "0.0.9",
+    "uuid": "^3.4.0"
   }
 }
