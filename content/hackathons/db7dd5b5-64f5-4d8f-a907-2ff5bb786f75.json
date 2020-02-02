@@ -1,0 +1,16 @@
+{
+  "id": "db7dd5b5-64f5-4d8f-a907-2ff5bb786f75",
+  "title": "Hackathon 2020",
+  "active": true,
+  "logo": "/images/uploads/stocard.png",
+  "descriptions": [
+    {
+      "language": "DE",
+      "description": "De"
+    },
+    {
+      "language": "EN",
+      "description": "En"
+    }
+  ]
+}
