@@ -12,7 +12,7 @@ const IdControl = window.createClass({
     getInitialState: function() {    return {};  },
     componentDidMount: function() {
         // If this widget doesn't have an ID yet we create one using the UUID package
-        alert("Mount?:" + this.props.value);
+        //alert("Mount?:" + this.props.value);
         if (!this.props.value) {
             this.props.onChange(uuid())
             this.setState();

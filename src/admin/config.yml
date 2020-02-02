@@ -1,8 +1,8 @@
 backend:
   name: github
   branch: master # Branch to update (optional; defaults to master)
-  #repo: hackerstolz/netlifyCMS_Test
-  repo: saschatu/Netlify_Test_Content
+  repo: hackerstolz/netlifyCMS_Test
+  #repo: saschatu/Netlify_Test_Content
 
 # media_folder: "" # Media files will be stored in the repo under images/uploads
 media_folder: "static/images/uploads"
@@ -92,6 +92,14 @@ collections:
         searchFields: ["id", "title"]
         valueField: "id"
         displayFields: ["title"]
+      - label: Sponsor
+        name: sponsor
+        widget: "relation"
+        required: false
+        collection: "party"
+        searchFields: ["id", "name"]
+        valueField: "id"
+        displayFields: ["name"]
       - label: Badges
         name: badges
         widget: list
@@ -217,7 +225,7 @@ collections:
             valueField: "id"
             displayFields: ["title"]
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Timeslot", name: "timeslot", widget: "string"}
+          - {label: "Timeslot", name: "timeslot", widget: "string", required: false}
           - label: Descriptions
             name: descriptions
             widget: list

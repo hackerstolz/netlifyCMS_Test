@@ -9,16 +9,19 @@ const NC_DEFAULT_FORMAT = 'frontmatter'; //if format not specified
 
 const PRINT_LOG = true;
 
+/*
 exports.parse = function(cmsConfigFilePath){
 		var parser = new Parser(cmsConfigFilePath);
 		return parser.parseCollections();
-};
+};*/
 
 exports.load = function(cmsConfigFilePath, contentRootPath, api){
     //Preparation: parse config.yml of NetlifyCMS to get collection's schema information and init loader
     var parser = new Parser(cmsConfigFilePath);
-	var loader = new ContentLoader(parser.parseCollections(), contentRootPath, api);
-	loader.load();
+    if(parser.initialized){
+        var loader = new ContentLoader(parser.parseCollections(), contentRootPath, api);
+        loader.load();
+	}
 };
 
 
@@ -73,14 +76,19 @@ class SchemaNode{
 }
 
 class Parser{
-	
 	constructor(cmsConfigFilePath){		
 		var cmsConfigFile = cmsConfigFilePath; //'./config.yml';
 		this.collections = new Map();
-		var file = fs.readFileSync(cmsConfigFile, 'utf8');
-		this.doc = yaml.parseDocument(file);
-		
-		this.log("Loaded " + cmsConfigFile);
+		this.initialized = true;
+		try{
+            var file = fs.readFileSync(cmsConfigFile, 'utf8');
+            this.doc = yaml.parseDocument(file);
+
+            this.log("Schema Parser initialized with " + cmsConfigFile);
+         }catch(err){
+             this.log("Error: " + err);
+             this.initialized = false;
+         }
 	}	
 	
 	parseCollections(){
@@ -165,19 +173,23 @@ class ContentLoader{
 	    collection.gsCollection = this.api.addCollection(collection.name);
 
 		//Get files in folder - TODO: filter by defined extension
-		let dirPath = this.contentRootPath + collection.folder;		
-		var files = fs.readdirSync(dirPath, {withFileTypes:true});
-		if (files === undefined){
-			this.log("No content files found in " + dirPath);
-		}else{
-			for (const file of files){
-				if(file.isFile() && file.name.includes('.json')){ //only parse JSON and avoid subfolders
-					this.loadJSONFile(collection, dirPath + "/" + file.name);
-				}else{
-					this.log("Skipped " + file.name);
-				}
-			}
-		}
+		let dirPath = this.contentRootPath + collection.folder;
+		try{
+            var files = fs.readdirSync(dirPath, {withFileTypes:true});
+            if (files === undefined){
+                this.log("No content files found in " + dirPath);
+            }else{
+                for (const file of files){
+                    if(file.isFile() && file.name.includes('.json')){ //only parse JSON and avoid subfolders
+                        this.loadJSONFile(collection, dirPath + "/" + file.name);
+                    }else{
+                        this.log("Skipped " + file.name);
+                    }
+                }
+            }
+        } catch (err) {
+          this.log("Error: " + err);
+        }
 	}
 
 	loadJSONFile(collection, path){		
