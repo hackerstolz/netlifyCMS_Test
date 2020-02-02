@@ -6,7 +6,18 @@
     {
       "language": "DE",
       "description": "De"
+    },
+    {
+      "language": "EN",
+      "description": "En"
     }
   ],
-  "badges": []
+  "badges": [
+    {
+      "badge": "29c34002-2c38-44d6-ae96-9145618acc93"
+    },
+    {
+      "badge": "825b97a8-7448-41f0-a035-c294d1870430"
+    }
+  ]
 }

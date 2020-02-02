@@ -1,8 +1,8 @@
 backend:
   name: github
   branch: master # Branch to update (optional; defaults to master)
-  repo: hackerstolz/netlifyCMS_Test
-  #repo: saschatu/Netlify_Test_Content
+  #repo: hackerstolz/netlifyCMS_Test
+  repo: saschatu/Netlify_Test_Content
 
 # media_folder: "" # Media files will be stored in the repo under images/uploads
 media_folder: "static/images/uploads"
@@ -13,7 +13,7 @@ collections:
     label: "Hackathon" # Used in the UI
     folder: "content/hackathons" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    #format: json
+    format: json
     slug: "{{slug}}"
     identifier_field: id
     summary: "{{title}} ({{id}})"
@@ -50,7 +50,7 @@ collections:
     label: "Challenge"
     folder: "content/challenges"
     create: true
-    #format: json
+    format: json
     slug: "{{slug}}"
     identifier_field: id
     summary: "{{title}} ({{id}})"
@@ -118,7 +118,7 @@ collections:
     label: "Badge"
     folder: "content/badges"
     create: true
-    #format: json
+    format: json
     slug: "{{slug}}"
     identifier_field: id
     summary: "{{title}} ({{id}})"

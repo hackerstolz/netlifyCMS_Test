@@ -8,23 +8,26 @@ import uuid from 'uuid/v4';
 /**
  * Create the control widget, this will add a form element to the cms UI
  */
-const IdControl = window.createClass({  
+const IdControl = window.createClass({
     getInitialState: function() {    return {};  },
     componentDidMount: function() {
-        // If this widget doesn't have an ID yet we create one using the UUID package    
-        if (!this.props.value) { 
-            this.props.onChange(uuid());    
+        // If this widget doesn't have an ID yet we create one using the UUID package
+        alert("Mount?:" + this.props.value);
+        if (!this.props.value) {
+            this.props.onChange(uuid())
+            this.setState();
+            this.forceUpdate();
         } 
     }, 
-    handleChange() { 
+    handleChange() {
         this.props.onChange(uuid());
     },  
-    render: function() { 
-        return window.h('p', null, `${this.props.value}`);
-    },
-
-	componentDidUpdate: function() {
-		const regString = " (regenerated) ";
+    render: function() {
+        return window.h('p', null , this.props.value);
+    }
+/*
+	componentDidUpdate(prevProps) {
+	/*	const regString = " (regenerated) ";
         // If this widget doesn't have an ID yet we create one using the UUID package  
 		if(this.props.value.includes(regString)){ //it was just regenerated - update it silently (without update -> else endless loop)
 		//if (this.props.uniqueFieldId == "NEW"){
@@ -37,9 +40,23 @@ const IdControl = window.createClass({
 			this.props.onChange(uuid() + regString);
 			
 		}
-    }/*,
-	getSnapshotBeforeUpdate: function(){
-		if(prevProps.value == this.props.value){ //no change -> lets trigger change of value
+        alert("DidUpdate:" + prevProps.value + " || " + this.props.value);
+        if (prevProps.value == this.props.value){ //do change it
+            //this.props.uniqueFieldId = uuid()
+            return this.props.onChange(uuid());
+        }
+
+	}*/
+	 /*, getSnapshotBeforeUpdate(prevProps, prevState){
+	     if(this.props.value != prevProps.value){
+	        return ""
+	     }
+	 }*/
+
+
+    /*,
+	shouldComponentUpdate(): function(){
+		if(this.props.uniqueFieldId == this.props.value || this.props.uniqueFieldId == undefined){ //no change -> lets trigger change of value
 			this.props.uniqueFieldId = uuid();
 		}		
 	}*/
@@ -51,7 +68,7 @@ const IdControl = window.createClass({
 const IdPreview = window.createClass({  
     getInitialState: function() { console.log(this.props); return {}; }, 
     render: function() { 
-        return window.h('p', null, `ID: ${this.props.value}`);  
+        return window.h('p', null, `Id: ${this.props.value}`);
     }
 });
 
