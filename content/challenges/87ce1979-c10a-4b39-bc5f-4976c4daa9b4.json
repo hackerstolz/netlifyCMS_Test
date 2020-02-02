@@ -1,0 +1,25 @@
+{
+  "id": "87ce1979-c10a-4b39-bc5f-4976c4daa9b4",
+  "title": "Challenge A ",
+  "hackathon": "db7dd5b5-64f5-4d8f-a907-2ff5bb786f75",
+  "descriptions": [
+    {
+      "language": "DE",
+      "description": "de description"
+    }
+  ],
+  "price": "0c34d2d9-6162-4580-9ab9-ce424d46e022",
+  "badges": [
+    {
+      "badge": "1659a4f2-c655-4b9a-a6aa-c808cf5da12c"
+    },
+    {
+      "badge": "cb5da00e-08ec-467c-a2fe-e5cc6a4e0097"
+    }
+  ],
+  "categories": [
+    {
+      "category": "80a3b32f-f2cc-48e8-bc55-7aee1ed6285f"
+    }
+  ]
+}
