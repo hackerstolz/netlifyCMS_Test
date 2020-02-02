@@ -135,6 +135,7 @@ collections:
   - name: "category"
     label: "Category"
     folder: "content/categories"
+    format: json
     create: true
     slug: "{{slug}}"
     identifier_field: id
@@ -165,6 +166,7 @@ collections:
   - name: "price"
     label: "Price"
     folder: "content/prices"
+    format: json
     create: true
     slug: "{{slug}}"
     identifier_field: id
@@ -181,6 +183,7 @@ collections:
   - name: "party"
     label: "Party"
     folder: "content/parties"
+    format: json
     create: true
     slug: "{{slug}}"
     identifier_field: id
@@ -224,6 +227,7 @@ collections:
   - name: "role"
     label: "Role"
     folder: "content/roles"
+    format: json
     create: true
     slug: "{{slug}}"
     identifier_field: id

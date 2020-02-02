@@ -14,7 +14,7 @@ module.exports = function (api) {
   })*/
 
   api.loadSource(actions => {
-    t.load("./src/admin/config.yml", "./test/", actions);
+    t.load("./src/admin/config.yml", "./", actions);
   })
 
   api.createPages(({ createPage }) => {
