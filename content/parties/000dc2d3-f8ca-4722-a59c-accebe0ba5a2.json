@@ -2,5 +2,18 @@
   "id": "000dc2d3-f8ca-4722-a59c-accebe0ba5a2",
   "name": "Sponsor A",
   "image": "/images/uploads/stocard.png",
-  "roles": []
+  "roles": [
+    {
+      "hackathon": "db7dd5b5-64f5-4d8f-a907-2ff5bb786f75",
+      "role": "a2356405-ff97-4c1e-9c94-cf12dbc1696d",
+      "title": "This Sponsore provides technology for a challenge",
+      "timeslot": "All day long",
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Mehr Text"
+        }
+      ]
+    }
+  ]
 }
