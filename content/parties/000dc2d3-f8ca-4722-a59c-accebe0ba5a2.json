@@ -7,11 +7,23 @@
       "hackathon": "db7dd5b5-64f5-4d8f-a907-2ff5bb786f75",
       "role": "a2356405-ff97-4c1e-9c94-cf12dbc1696d",
       "title": "This Sponsore provides technology for a challenge",
-      "timeslot": "All day long",
+      "timeslot": "",
       "descriptions": [
         {
           "language": "DE",
           "description": "Mehr Text"
+        }
+      ]
+    },
+    {
+      "hackathon": "db7dd5b5-64f5-4d8f-a907-2ff5bb786f75",
+      "role": "146f8e57-a07f-444d-b74e-73891cd9d0cc",
+      "title": "Mentor for Technology ABC",
+      "timeslot": "10am - 16pm",
+      "descriptions": [
+        {
+          "language": "DE",
+          "description": "Zu Fragen bzgl. Technologie ABC ..."
         }
       ]
     }
